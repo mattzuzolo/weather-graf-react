@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //GraphQL
-import ApolloClient from "apollo-client";
+import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 //Make local apollo client
@@ -15,6 +15,7 @@ import { ApolloProvider } from "react-apollo";
 const client = new ApolloClient({
   //all fetched data will run through below method and return ID
   dataIdFromObject: o => o.id,
+  uri: "https://w5xlvm3vzz.lp.gql.zone/graphql"
   //apollo can now identify everything fetched
 });
 
