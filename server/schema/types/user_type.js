@@ -6,6 +6,7 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLList,
+  GraphQLID,
 } = graphql;
 
 const SavedLocationType = require("./saved_location_type");
@@ -14,7 +15,7 @@ const User = mongoose.model("user");
 const UserType = new GraphQLObjectType({
   name: "UserType",
   fields: () => ({
-    id: { type: GraphQLString },
+    id: { type: GraphQLID },
     username: { type: GraphQLString },
     location: { type: GraphQLString },
     savedLocations: { 
